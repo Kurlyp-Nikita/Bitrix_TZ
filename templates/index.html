@@ -1,0 +1,32 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+        <title>Главная Страница</title>
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+    {% endblock head %}
+</head>
+
+<body>
+
+    <header>
+        <a href="{% url 'home' %}" class="logo">Наш сайт</a>
+
+        <nav>
+            <ul>
+                <li><a href="{% url 'cust' %}">Закзчик</a></li>
+                <li><a href="{% url 'perf' %}">Исполнитель</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+{% block content %}
+
+{% endblock content %}
+
+</body>
+</html>

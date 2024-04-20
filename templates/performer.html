@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="{% static 'cust.css' %}">
+    <title>Исполнитель</title>
+{% endblock head %}
+
+{% block content %}
+
+<div class="center">
+    <table>
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Контактные данные</th>
+                <th>Опыт</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in perf %}
+                <tr class="body">
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.contact_data }}</td>
+                    <td>{{ i.experience }} лет.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
